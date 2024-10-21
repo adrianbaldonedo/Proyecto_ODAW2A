@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+</head>
+<body>
+    <h1>Tendremos los siguientes productos</h1>
+    <ul th:each="producto:${productos}">
+        <li th:text="${producto}"></li>
+    </ul>
+    <a href="./index.html">index</a><br>
+    <img src="./producto.jpg"/>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panaderia Xuxan</title>
+</head>
+<body>
+    <h1>Pronto pondremos el numero de contacto</h1>
+    <form action="#" method="post" th:action="@{/contacta}"
+    th:object="${formInfo}">
+    <label>Nombre:
+        <input type="text" id="nombre" th:field="*{nombre}"/>
+    </label><br/>
+    <label>Email:
+        <input type="text" id="email" th:field=*{email}/>
+    </label><br/>
+    <select name="lista" size="3" th:field="*{valores}">
+        <option value="queja">queja</option>
+        <option value="consulta">consulta</option>
+        <option value="ottros">otros</option> 
+    </select><br/>
+    <label>Acepto las condiciones
+        <input type="checkbox" id="acepto" th:field="*{aceptaCondiciones}">
+    </label><br>
+    <input type="submit" value="Enviar">
+</form>
+<a href="/index"><img src="/index.png"></a>
+    <!-- <img src="/contacto.jpg"/><br> -->
+</body>
+</html>

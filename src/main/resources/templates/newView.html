@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Nuevo producto</h1>
+    <form method="post" action="#" th:action="@{/nuevo/submit}" th:object="${Productoform}">
+        <label>Id:<input type="hidden" id="id" th:field="*{id}" /></label><br />
+        <label>Nombre: <input type="text" id="nombre" th:field="*{nombre}" /></label><br />
+        <label>Precio:<input type="text" id="Precio" th:field=*{precio}/></label><br/>
+        <label>Cliente:<input type="text" id="Cliente" th:field=*{cliente}/></label><br/>
+        <label>Proveedor:<input type="text" id="Proveedor" th:field=*{proveedor}/></label><br/>
+        <label>Tipo:<input type="text" id="Tipo" th:field=*{tipo}/></label><br/>
+        <input type="submit" value="Enviar" />
+    </form>
+    <a th:href="@{/}">Inicio</a><br />
+</body>
+</html>
