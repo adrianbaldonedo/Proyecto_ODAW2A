@@ -3,10 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panaderia Xuxan</title>
+    <title>Contacta/<title>
+        <style>
+            #contacta{
+                background-color: aqua;
+                border:3px solid orange;
+            }
+    
+        </style>
 </head>
 <body>
-    <h1>Pronto pondremos el numero de contacto</h1>
+    <h1>Formulario Contacto</h1>
+    <form id="contacta" action="index.html" method="get">
+        <fieldset>
+            Nombre:<input type="text" name="nombre" size="10" maxlength="5"/><br/>
+            Apellidos:<input type="tex" name="apellidos" size="10" maxlength="5"/><br/>
+            Email:<input type="email" name="email" required multiple size="10"/><br/>
+            Telefono:<input type="tel" name="mitel" size="10">
+            <input type="submit"value="Enviar"/>
+        </fieldset>
+    </form>
     <a href="./index.html">index</a><br>
     <img src="/contacto.jpg"/><br>
 </body>
