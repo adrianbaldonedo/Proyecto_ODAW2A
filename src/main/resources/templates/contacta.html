@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panaderia Xuxan</title>
+    <title>Contacta</title>
 </head>
 <body>
-    <h1>Pronto pondremos el numero de contacto</h1>
     <form action="#" method="post" th:action="@{/contacta}"
     th:object="${formInfo}">
     <label>Nombre:
@@ -25,7 +24,7 @@
     </label><br>
     <input type="submit" value="Enviar">
 </form>
-<a href="/index"><img src="/index.png"></a>
-    <!-- <img src="/contacto.jpg"/><br> -->
+<a th:href="@{/}">Inicio</a><br/>
+<img src="contacto.png"/>
 </body>
 </html>
