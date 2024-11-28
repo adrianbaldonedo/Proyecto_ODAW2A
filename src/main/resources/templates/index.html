@@ -6,8 +6,25 @@
     <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <script src="/webjars/bootstrap/js/bootstrap.bundle.min.js"></script>
     <title>Panaderia Xuxan</title>
+    <style>
+        .nav-item{display: flex;
+            list-style: none;
+            justify-content: space-between;
+            width:50px;
+            display:flex}
+            h1{color: orangered;
+                text-align: center;
+                font-style: arial;
+            }
+            img{
+                width: 70px;
+                height: 70px;
+                text-align:right;
+            }
+    </style>
 </head>
 <body>
+    <h1><img src="xuxan.jpg"/>Bienvenidos a Panaderia Xuxan</h1><br>
     <!-- menú común para el público -->
     <li class="nav-item"><a class="nav-link active" aria-current="page" th:href="@{public/home}">
         Inicio</a></li>
@@ -31,9 +48,9 @@
             <li><form th:action="@{/logout}" method="post">
             <button class="dropdown-item" type="submit">Cerrar sesión POST</button></form></li>
             </ul>
-        </li>
-        <p>Bienvenido a nuestra web </p><br>
+        </li> 
         <p th:text="${anho}">anho</p><br/>
+        
         <!-- <span th:text="${nombre}"></span> -->
     <a href="/public/nombre">nombre</a><br/>
     <a href="/public/web">web</a><br/>
@@ -42,6 +59,8 @@
     <a href="/producto">producto</a><br>
     <a href="/signin">login</a><br/>
     <a href="/signout">desconectar</a><br/>
-    <a href="/public/index"><img src="/index.png"></a>
+    <a href="https://maps.app.goo.gl/2GFeHyUqVJe58pn99"><img src="iconomaps.png"/></a><br>
+    <a href="/public/index"><img src="/index.png" height="80px"></a>
+
 </body>
 </html>
