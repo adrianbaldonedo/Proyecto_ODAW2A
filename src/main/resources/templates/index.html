@@ -7,13 +7,23 @@
     <script src="/webjars/bootstrap/js/bootstrap.bundle.min.js"></script>
     <title>Panaderia Xuxan</title>
     <style>
-        .nav-item{display: flex;
-            list-style: none;
-            justify-content: space-between;
-            width:50px;
-            display:flex}
+        ul {
+                list-style: none;
+                display: flex;
+                justify-content: space-between;
+                width: 50%;
+            }
+        nav{background-color: orange;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            }
+            #id{font-size: 70px;}
+            #gif{
+                width: 50px;
+                height: 50px;
+            }
             h1{color: orangered;
-                text-align: center;
                 font-style: arial;
             }
             img{
@@ -21,10 +31,54 @@
                 height: 70px;
                 text-align:right;
             }
+            #contenedor-superior-header{
+                width: 100%;
+                display: flex;
+                text-align: center;
+                color: orangered;
+                justify-content: space-between;
+                }
+            #contenedor-superior-header img{
+                width: 150px;
+                height: 100px;
+                background-color: gray;
+                text-align: right;
+            }
+            li{
+                display: block;
+                justify-content: center;
+                float: left;
+            }
+            footer{
+                position: fixed;
+                bottom: 0;
+                justify-content: center;
+                width: 100%;
+                border:3px solid orange ;
+                margin: 30px;
+                display: flex;
+                justify-content: center;
+            }
     </style>
 </head>
 <body>
-    <h1><img src="xuxan.jpg"/>Bienvenidos a Panaderia Xuxan</h1><br>
+    <header>
+        <div id="contenedor-superior-header">
+            <img src="xuxan.jpg"/>
+             <h1 id="titulo">Bienvenidos a Panaderia Xuxan</h1>
+        </div>
+        <nav>
+            <ul>
+                <img id="gif" src="xuxan.gif"/><br/>
+                <a href="/public/nombre">nombre</a><br/>
+                <a href="/public/web">web</a><br/>
+                <a href="/public/quienes-somos">somos</a><br>
+                <a href="/public/contacta">contacta</a><br>
+                <a href="/producto">producto</a><br>
+            </ul>
+        </nav>
+        </header>
+        <div>
     <!-- menú común para el público -->
     <li class="nav-item"><a class="nav-link active" aria-current="page" th:href="@{public/home}">
         Inicio</a></li>
@@ -49,18 +103,23 @@
             <button class="dropdown-item" type="submit">Cerrar sesión POST</button></form></li>
             </ul>
         </li> 
+        </div>
+   
         <p th:text="${anho}">anho</p><br/>
         
         <!-- <span th:text="${nombre}"></span> -->
-    <a href="/public/nombre">nombre</a><br/>
+    <!-- <a href="/public/nombre">nombre</a><br/>
     <a href="/public/web">web</a><br/>
     <a href="/public/quienes-somos">somos</a><br>
     <a href="/public/contacta">contacta</a><br>
-    <a href="/producto">producto</a><br>
-    <a href="/signin">login</a><br/>
-    <a href="/signout">desconectar</a><br/>
-    <a href="https://maps.app.goo.gl/2GFeHyUqVJe58pn99"><img src="iconomaps.png"/></a><br>
-    <a href="/public/index"><img src="/index.png" height="80px"></a>
+    <a href="/producto">producto</a><br> -->
+    <footer>
+        <a href="/signin">login</a><br/>
+        <a href="/signout">desconectar</a><br/>
+        <a href="https://maps.app.goo.gl/2GFeHyUqVJe58pn99"><img src="iconomaps.png"/></a><br>
+        <a href="/public/index"><img src="/index.png" height="80px"></a>
 
+    </footer>
+    
 </body>
 </html>
