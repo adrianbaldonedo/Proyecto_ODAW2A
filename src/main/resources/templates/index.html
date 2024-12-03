@@ -23,8 +23,9 @@
                 width: 50px;
                 height: 50px;
             }
-            h1{color: orangered;
+            #titulo{color: orangered;
                 font-style: arial;
+               
             }
             img{
                 width: 70px;
@@ -59,27 +60,40 @@
                 display: flex;
                 justify-content: center;
             }
+            #dos{
+                background-color: aqua;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+            }
+            li:last-child{
+                color: orange;
+                text-align: center;
+            }
     </style>
 </head>
 <body>
     <header>
         <div id="contenedor-superior-header">
             <img src="xuxan.jpg"/>
-             <h1 id="titulo">Bienvenidos a Panaderia Xuxan</h1>
+            <h1 id="titulo">Bienvenidos a Panaderia Xuxan</h1>
+            <img id="gif" src="xuxan.gif"/><br/>
         </div>
         <nav>
             <ul>
-                <img id="gif" src="xuxan.gif"/><br/>
                 <a href="/public/nombre">nombre</a><br/>
                 <a href="/public/web">web</a><br/>
                 <a href="/public/quienes-somos">somos</a><br>
                 <a href="/public/contacta">contacta</a><br>
                 <a href="/producto">producto</a><br>
+                <a href="/signin">login</a><br/>
+                <a href="/signout">desconectar</a><br/>
             </ul>
         </nav>
         </header>
         <div>
     <!-- menú común para el público -->
+
     <li class="nav-item"><a class="nav-link active" aria-current="page" th:href="@{public/home}">
         Inicio</a></li>
         <!-- menú de gestión de usuarios (solo administradores) -->
@@ -101,24 +115,23 @@
             <li><a class="dropdown-item" th:href="@{/logout}">Cerrar sesión GET</a></li>
             <li><form th:action="@{/logout}" method="post">
             <button class="dropdown-item" type="submit">Cerrar sesión POST</button></form></li>
-            </ul>
+            <a href="https://maps.app.goo.gl/2GFeHyUqVJe58pn99"><img src="iconomaps.png"/></a><br>
+        </ul>
         </li> 
         </div>
-   
-        <p th:text="${anho}">anho</p><br/>
-        
-        <!-- <span th:text="${nombre}"></span> -->
-    <!-- <a href="/public/nombre">nombre</a><br/>
-    <a href="/public/web">web</a><br/>
-    <a href="/public/quienes-somos">somos</a><br>
-    <a href="/public/contacta">contacta</a><br>
-    <a href="/producto">producto</a><br> -->
     <footer>
-        <a href="/signin">login</a><br/>
-        <a href="/signout">desconectar</a><br/>
-        <a href="https://maps.app.goo.gl/2GFeHyUqVJe58pn99"><img src="iconomaps.png"/></a><br>
-        <a href="/public/index"><img src="/index.png" height="80px"></a>
-
+        <nav id="dos">
+            <ul id="abajo">
+                <li><a href="/public/contacta"><img src="contacto.png"/></a></li><br>
+                <li><a href="https://es-es.facebook.com/"><img src="redes-sociales.png"/></a></li><br>
+                <li><img src="cookies.png"/></li><br>
+                <li><img src="telefono.png"/></li><br>
+                <li><img src="licencia.png"/></li>
+                <li><a href="https://maps.app.goo.gl/2GFeHyUqVJe58pn99"><img src="iconomaps.png"/></a><br></li>
+                <li><a href="/public/index"><img src="/index.png" height="80px"></a></li>
+                <li> <p th:text="${anho}">anho</p><br/></li>
+            </ul>
+        </nav>
     </footer>
     
 </body>
