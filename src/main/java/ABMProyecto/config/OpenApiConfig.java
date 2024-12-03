@@ -17,7 +17,7 @@ public class OpenApiConfig {
  @Bean
 public OpenAPI myOpenAPI() {
 Server prodServer = new Server();
-prodServer.setUrl("http://localhost:9000");
+prodServer.setUrl("http://localhost:9000/");
 prodServer.setDescription("Server URL in Production environment");
 Contact contact = new Contact();
 contact.setEmail("adrianbaldonedo@gmail.com");
