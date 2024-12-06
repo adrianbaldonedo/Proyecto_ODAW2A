@@ -75,21 +75,21 @@
 <body>
     <header>
         <div id="contenedor-superior-header">
-            <img src="xuxan.jpg"/>
+            <img src="/xuxan.jpg"/>
             <h1 id="titulo">Bienvenidos a Panaderia Xuxan</h1>
-            <img id="gif" src="xuxan.gif"/><br/>
+            <img id="gif" src="/xuxan.gif"/><br/>
         </div>
         <nav>
             <ul>
                 <a href="/public/quienes-somos">somos</a><br>
                 <a href="/public/contacta">contacta</a><br>
                 <a href="/producto">producto</a><br>
+                <a href="/cliente">cliente</a><br>
                 <a href="/signin">login</a><br/>
                 <a href="/signout">desconectar</a><br/>
             </ul>
         </nav>
         </header>
-        <div>
     <!-- menú común para el público -->
     <li class="nav-item"><a class="nav-link active" aria-current="page" th:href="@{public/home}">
         Inicio</a></li>
@@ -112,21 +112,19 @@
             <li><a class="dropdown-item" th:href="@{/logout}">Cerrar sesión GET</a></li>
             <li><form th:action="@{/logout}" method="post">
             <button class="dropdown-item" type="submit">Cerrar sesión POST</button></form></li>
-            <a href="https://maps.app.goo.gl/2GFeHyUqVJe58pn99"><img src="iconomaps.png"/></a><br>
         </ul>
-        </li> 
-        </div>
+        </li>         
     <footer>
         <nav id="dos">
             <ul id="abajo">
-                <li><a href="/public/contacta"><img src="contacto.png"/></a></li><br>
-                <li><a href="https://es-es.facebook.com/"><img src="redes-sociales.png"/></a></li><br>
-                <li><img src="cookies.png"/></li><br>
-                <li><img src="telefono.png"/></li><br>
-                <li><img src="licencia.png"/>Panadería Xuxan</li>
-                <li><a href="https://maps.app.goo.gl/2GFeHyUqVJe58pn99"><img src="iconomaps.png"/></a><br></li>
-                <li><a href="/"><img src="/index.png" height="80px"></a></li>
-                <li> <p th:text="${anho}">anho</p><br/></li>
+                <li><a href="/public/contacta"><img src="/contacto.png"/></a></li><br>
+                <li><a href="https://es-es.facebook.com/"><img src="/redes-sociales.png"/></a></li><br>
+                <li><img src="/cookies.png"/></li><br>
+                <li><img src="/telefono.png"/></li><br>
+                <li><img src="/licencia.png"/>Panadería Xuxan</li>
+                <li><a href="https://maps.app.goo.gl/2GFeHyUqVJe58pn99"><img src="/iconomaps.png"/></a><br></li>
+                <!-- <li><a href="/"><img src="/index.png" height="80px"></a></li> -->
+                <li><p th:text="${anho}">anho</p><br/></li>
             </ul>
         </nav>
     </footer>

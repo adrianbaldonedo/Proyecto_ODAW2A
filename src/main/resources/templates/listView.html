@@ -72,7 +72,7 @@
                 <th>Borrar</th>
         </thead>
         <tbody>
-            <tr th:each="producto : ${listaProductos}">
+            <tr th:each="producto:${listaProductos}">
                 <td th:text="${producto.id}">Id</td>
                 <td th:text="${producto.nombre}">nombre</td>
                 <td th:text="${producto.precio}">0</td>
@@ -84,8 +84,8 @@
             </tr>
         </tbody>
     </table>
-    <a th:href="@{/}">Inicio</a><br />
     <a th:href="@{/nuevo}">Nuevo producto</a><br />
+    <a th:href="@{/}">Inicio</a><br />
     <p style="color:red;"th:text="${msg}">mensaje</p>
     <script>
         function changeCategory(){

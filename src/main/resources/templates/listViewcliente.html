@@ -42,7 +42,7 @@
                 <th>Nombre</th>
         </thead>
         <tbody>
-            <tr th:each="cliente : ${listaClientes}">
+            <tr th:each="cliente:${listaClientes}">
                 <td th:text="${cliente.id}">Id</td>
                 <td th:text="${cliente.nombre}">nombre</td>
                 <td><a th:href="@{/edit/{id}(id=${cliente.id})}">Editar</a></td>
