@@ -52,7 +52,7 @@
             <tr th:each="proveedor : ${listaProveedores}">
                 <td th:text="${proveedor.id}">Id</td>
                 <td th:text="${proveedor.nombre}">nombre</td>
-                <td><a th:href="@{/edit/{id}(id=${proveedor.id})}">Editar</a></td>
+                <td><a th:href="@{/editar/{id}(id=${proveedor.id})}">Editar</a></td>
                 <td><a th:href="@{/borrar/{id}(id=${proveedor.id})}">Borrar</a></td>
             </tr>
         </tbody>
