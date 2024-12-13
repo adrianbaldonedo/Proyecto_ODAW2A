@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
 import ABMProyecto.domain.Cliente;
 import ABMProyecto.domain.Producto;
 import ABMProyecto.domain.Proveedor;
@@ -79,7 +78,6 @@ public class ABMProductoController {
         productoService.borrar(id);
         return "redirect:/productos";
     }
-   
 }
 
 

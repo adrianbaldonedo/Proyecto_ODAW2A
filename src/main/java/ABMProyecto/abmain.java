@@ -32,6 +32,7 @@ public class abmain {
 					new Usuario(2L, "user", "1234", Rol.USUARIO));
 			Cliente clien1=clienteservice.añadir(new Cliente(1L,"Patricia"));
 			Cliente client2=clienteservice.añadir(new Cliente(2L,"Juan"));
+			Cliente client3=clienteservice.añadir(new Cliente(3L,"Monica"));
 			Proveedor proveed1=proveedorService.añadir(new Proveedor(1L,"Martinez"));
 			Proveedor proveed2=proveedorService.añadir(new Proveedor(2L,"Ochoa"));
 			Tipo tip1=tipoService.añadir(new Tipo(1L,"Pan"));
