@@ -76,7 +76,7 @@ public class ABMProductoController {
     @GetMapping("/borrar/{id}")
     public String geDelete(@PathVariable Long id) {
         productoService.borrar(id);
-        return "redirect:/productos";
+        return "redirect:/newView";
     }
 }
 

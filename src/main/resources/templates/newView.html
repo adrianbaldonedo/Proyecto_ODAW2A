@@ -7,13 +7,27 @@
 </head>
 <body>
     <h1>Nuevo producto</h1>
-    <form method="post" action="#" th:action="@{/nuevo/submit}" th:object="${Productoform}">
-        <label>Id:<input type="hidden" id="id" th:field="*{id}" /></label><br />
-        <label>Nombre: <input type="text" id="nombre" th:field="*{nombre}" /></label><br />
+    <form method="post" action="#" th:action="@{/producto/nuevo/submit}" th:object="${Productoform}">
+        <label>Nombre: <input type="text" id="nombre" th:field="*{nombre}" required /></label><br />
         <label>Precio:<input type="text" id="Precio" th:field=*{precio}/></label><br/>
-        <label>Cliente:<input type="text" id="Cliente" th:field=*{cliente}/></label><br/>
-        <label>Proveedor:<input type="text" id="Proveedor" th:field=*{proveedor}/></label><br/>
-        <label>Tipo:<input type="text" id="Tipo" th:field=*{tipo}/></label><br/>
+        <label>
+            Cliente:
+            <select th:field="*{cliente}" id="Cliente">
+                <option th:each="cliente : ${listaClientes}" th:value="${cliente.id}" th:text="${cliente.nombre}"></option>
+            </select>
+        </label><br/>
+        <label>
+            Proveedor:
+            <select th:field="*{proveedor}" id="Proveedor">
+                <option th:each="proveedor : ${listaProveedores}" th:value="${proveedor.id}" th:text="${proveedor.nombre}"></option>
+            </select>
+        </label><br/>
+        <label>
+            Tipo:
+            <select th:field="*{tipo}" id="Tipo">
+                <option th:each="tipo : ${listaTipo}" th:value="${tipo.id}" th:text="${tipo.nombre}"></option>
+            </select>
+        </label><br/>
         <input type="submit" value="Enviar" />
     </form>
     <a th:href="@{/}">Inicio</a><br />

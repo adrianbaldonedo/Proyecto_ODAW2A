@@ -7,8 +7,8 @@
 </head>
 <body>
     <h1>Editar cliente</h1>
-    <form method="post" action="#" th:action="@{/nuevo/submit}" th:object="${Clienteform}">
-        <label>Id:<input type="text" id="id" th:field="*{id}" /></label><br />
+    <form method="post" action="#" th:action="@{/cliente/editar/submit}" th:object="${ClienteForm}">
+        <label>Id:<input type="text" id="id" th:field="*{id}" readonly /></label><br />
         <label>Nombre: <input type="text" id="nombre" th:field="*{nombre}" /></label><br />
         <input type="submit" value="Enviar" />
     </form>

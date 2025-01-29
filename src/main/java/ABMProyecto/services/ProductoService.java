@@ -7,6 +7,7 @@ public interface ProductoService {
      Producto obtenerporId(long id); 
      Producto editar(Producto producto);
      void borrar(long id);
+     void borrarPorCliente(Long idCliente);
      List<Producto>obtenerPorCliente(Long idCliente);
      List<Producto>obtenerPorProveedor(Long idProveedor);
      List<Producto>obtenerPorTipo(Long idTipo);
@@ -16,4 +17,3 @@ public interface ProductoService {
     
     
     
-

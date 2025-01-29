@@ -1,0 +1,98 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="lista">
+        <h2>Lista productos</h2>
+    </div>
+    <div>
+        <h2>Lista compra</h2>
+        <table id="carrito"></table>
+    </div>
+    <div id="totalcompra"><em>Total pagar</em></div>
+    <script>
+        let productos=[]
+        window.onload=() =>{
+            const xhr=new XMLHttpRequest();
+            xhr.open('GET','productos.json');
+            xhr.onload=function(){
+                if(this.status===200){
+                    productos=JSON.parse(this.responseText);
+                    productos.forEach(producto => objProductos.push(
+                        new Productp(producto.id,producto.nombre,producto.precio,producto.stock)
+                    ));
+                    mostrarProductos()
+                    anadirCarrito('Empanada',30);
+                    anadirCarrito('Bolla',2);
+                    anadirCarrito('Tarta',10);
+                    anadirCarrito('Barra',1);
+                    mostrarCarrito();
+                    calcularTotal();
+                }
+            }
+            xhr.send();
+        }
+        let carrito=[];
+        let total=0;
+        let objProductos=[]
+        class Producto{
+            constructor(id,nombre,precio,stock){
+                this.id=id;
+                this.nombre=nombre;
+                this.precio=precio;
+                this.stock=stock;
+            }
+            actualizarStock(cantidad){
+                this.stock -=cantidad;
+                document.getElementById(`stock${this.nombre}`,innerHTML)
+            }
+        }
+        class Carro{
+            constructor(nombre,precio,cantidad){
+                this.nombre=nombre;
+                this.precio=precio;
+                this.cantidad=cantidad;
+            }
+
+        }
+        mostrarCompra(){
+        const li=document.createElement("li");
+        const kilos=document.createElement("span");
+        const nombre=document.createElement("span");
+        const precio=document.createElement("span");
+        const boton1=document.createElement("input");
+        boton1.setAttribute("type","button");
+        const boton2 =document.createElement("input");
+        boton2.setAttribute("type","button");
+        boton2.setAttribute("value","+");
+        kilos.textConten=this.cantidad;
+        nombre.textContent=this.nombre;
+        precio.textContent=this.precio;
+        li.appendChild(kilos);
+        li.appendChild(nombre);
+        li.appendChilid(precio);
+        li.appendChilid(boton1);
+        li.appendChild(boton2);
+        return li;
+        }
+        addtotal(){
+        return this.precio*this.cantidad;
+        }
+    }
+funcion mostrarproductos(){
+    let lista=document.getElementById("lista");
+    let tablaProductos=`<table border="1">`;
+    tablaProductos +=`<tr><td>Nombre</td><td>Descripción</td><td>Precio</td><td>Stock</td>`;
+    for (let producto of productos){
+        tablaProductos +=`<tr>`;
+            
+            }
+    }
+    </script>
+</body> -->

@@ -52,13 +52,13 @@
             <tr th:each="cliente:${listaClientes}">
                 <td th:text="${cliente.id}">Id</td>
                 <td th:text="${cliente.nombre}">nombre</td>
-                <td><a th:href="@{/edit/{id}(id=${cliente.id})}">Editar</a></td>
-                <td><a th:href="@{/borrar/{id}(id=${cliente.id})}">Borrar</a></td>
+                <td><a th:href="@{/cliente/editar/{id}(id=${cliente.id})}">Editar</a></td>
+                <td><a th:href="@{/cliente/borrar/{id}(id=${cliente.id})}">Borrar</a></td>
             </tr>
         </tbody>
     </table>
     <a th:href="@{/}">Inicio</a><br />
-    <a th:href="@{/nuevo}">Nuevo cliente</a><br />
+    <a th:href="@{/cliente/nuevo}">Nuevo cliente</a><br />
     <p style="color:red;"th:text="${msg}">mensaje</p>
 </body>
 </html>

@@ -3,15 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/webjars/bootstrap/js/bootstrap.bundle.min.js"></script>
     <title>Document</title>
 </head>
 <body>
+     <!-- menú común para el público -->
+     <!-- <li class="nav-item"><a class="nav-link active" aria-current="page" th:href="@{public/home}">
+        Inicio</a></li> -->
+        <!-- menú de gestión de usuarios (solo administradores) -->
+        <!-- <li sec:authorize="hasRole('ADMIN')" class="nav-item">
+        <a class="nav-link active" aria-current="page" th:href="@{/usuarios/}">Usuarios</a></li> -->
+        <!-- menú: Registrarse (solo si no autenticado) -->
+        <!-- <li sec:authorize="!isAuthenticated()">
+        <a class="nav-item nav-link active" th:href="@{/registro/nuevo}">Registrarse</a></li> -->
+        <!-- menú: Iniciar sesión (solo si no autenticado) -->
+        <!-- <li sec:authorize="!isAuthenticated()">
+        <a class="nav-item nav-link active" th:href="@{/login}">Iniciar sesión</a></li>
+        <li class="nav-item ms-md-auto dropdown " sec:authorize="isAuthenticated()">
+            <a class="nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span sec:authentication="name"></span></a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="usuarios/perfil">Editar perfil</a></li>
+            <li><a class="dropdown-item" href="usuarios/contraseña">Cambiar Contraseña</a></li>
+            <li><a class="dropdown-item" th:href="@{/logout}">Cerrar sesión GET</a></li>
+            <li><form th:action="@{/logout}" method="post">
+            <button class="dropdown-item" type="submit">Cerrar sesión POST</button></form></li>
+            </ul> -->
+        <!-- </li> -->
     <h1>Nuevo cliente</h1>
-    <form method="post" action="#" th:action="@{/nuevo/submit}" th:object="${Clienteform}">
-        <label>Id:<input type="text" id="id" th:field="*{id}" /></label><br />
-        <label>Nombre: <input type="text" id="nombre" th:field="*{nombre}" /></label><br />
+    <form method="post" action="#" th:action="@{/cliente/nuevo/submit}" th:object="${ClienteForm}">
+        <label>Nombre: <input type="text" id="nombre" th:field="*{nombre}" required /></label><br />
         <input type="submit" value="Enviar" />
     </form>
     <a th:href="@{/}">Inicio</a><br />
+
 </body>
 </html>

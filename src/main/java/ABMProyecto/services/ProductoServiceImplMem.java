@@ -34,11 +34,28 @@ public class ProductoServiceImplMem implements ProductoService {
     }
 
     public Producto editar(Producto producto) {
-        return productoRepository.save(producto);
+
+        Producto productoExistente = productoRepository.findById(producto.getId()).orElseThrow(() -> new RuntimeException("Producto no encontrado"));
+
+        productoExistente.setNombre(producto.getNombre());
+        productoExistente.setPrecio(producto.getPrecio());
+
+        return productoRepository.save(productoExistente);
     }
 
     public void borrar(long id) {
       productoRepository.deleteById(id);
+    }
+    public void borrarPorCliente(Long idCliente) {
+        Cliente cliente=clienteRepository.findById(idCliente).orElse(null);
+
+        if (cliente != null) {
+            List<Producto> productos = productoRepository.findByCliente(cliente);
+
+            for (Producto producto : productos) {
+                productoRepository.deleteById(producto.getId());
+            }
+        }
     }
     public List<Producto>obtenerPorCliente(Long idCliente){
         Cliente cliente=clienteRepository.findById(idCliente).orElse(null);

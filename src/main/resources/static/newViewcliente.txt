@@ -6,10 +6,10 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Nuevo proveedor</h1>
-    <form method="post" action="#" th:action="@{producto/nuevo/submit}" th:object="${Proveedorform}">
-        <label>Id:<input type="text" id="id" th:field="*{id}" /></label><br />
-        <label>Nombre: <input type="text" id="nombre" th:field="*{nombre}" /></label><br />
+    <h1>Nuevo cliente</h1>
+    <form  action="/nuevoCliente/submit" method="post">
+        <label>Id:<input type="text" id="id" /></label><br />
+        <label>Nombre: <input type="text" id="nombre"/></label><br />
         <input type="submit" value="Enviar" />
     </form>
     <a th:href="@{/}">Inicio</a><br />

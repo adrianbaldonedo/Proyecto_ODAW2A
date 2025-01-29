@@ -82,12 +82,12 @@
                 <td th:text="${producto.cliente.nombre}"></td>
                 <td th:text="${producto.proveedor.nombre}"></td>
                 <td th:text="${producto.tipo.nombre}"></td>
-                <td><a th:href="@{/editar/{id}(id=${producto.id})}">Editar</a></td>
-                <td><a th:href="@{/borrar/{id}(id=${producto.id})}">Borrar</a></td>
+                <td><a th:href="@{/producto/editar/{id}(id=${producto.id})}">Editar</a></td>
+                <td><a th:href="@{/producto/borrar/{id}(id=${producto.id})}">Borrar</a></td>
             </tr>
         </tbody>
     </table>
-    <a th:href="@{/nuevo}">Nuevo producto</a><br />
+    <a th:href="@{/producto/nuevo}">Nuevo producto</a><br />
     <a th:href="@{/}">Inicio</a><br />
     <p style="color:red;"th:text="${msg}">mensaje</p>
     <script>

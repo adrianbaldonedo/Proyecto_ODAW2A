@@ -8,12 +8,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import ABMProyecto.domain.Cliente;
-import ABMProyecto.services.ClienteServiceImplmen;
+import ABMProyecto.services.ClienteService;
  @Controller
  @RequestMapping("/cliente")
  public class ABMClienteController {
     @Autowired
-     public ClienteServiceImplmen clienteService;
+     public ClienteService clienteService;
+
          @GetMapping({"/",""})
     public String getAll(@RequestParam(required=false) Integer op,Model model){
         model.addAttribute("listaClientes",clienteService.obtenerTodos());
@@ -26,15 +27,16 @@ import ABMProyecto.services.ClienteServiceImplmen;
        }
        return "listViewcliente";
     }
+    @GetMapping("/nuevo")
      public String getNew(Model model) {
          model.addAttribute("ClienteForm", new Cliente());
-         return "/newViewcliente";
+         return "newViewcliente";
      }
     @PostMapping("/nuevo/submit")
     public String getNewSubmit(Cliente cliente, Model model) {
         clienteService.añadir(cliente);
         model.addAttribute("msg", "Cliente añadido correctamente");
-        return "redirect:/newViewcliente";
+        return "redirect:/cliente";
     }
     @GetMapping("/editar/{id}")
     public String getEdit(@PathVariable Long id, Model model) {
@@ -51,12 +53,12 @@ import ABMProyecto.services.ClienteServiceImplmen;
     @PostMapping("/editar/submit")
     public String getEditSubmit(Cliente ClienteFom, Model model) {
         clienteService.editar(ClienteFom);
-        return "redirect:/editViewcliente";
+        return "redirect:/cliente";
     }
     @GetMapping("/borrar/{id}")
     public String geDelete(@PathVariable Long id) {
         clienteService.borrar(id);
-        return "redirect:/Clientes";
+        return "redirect:/cliente";
     }
 }
 

@@ -5,10 +5,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ABMProyecto.domain.Cliente;
 import ABMProyecto.repositorios.ClienteRepository;
+
 @Service
 public class ClienteServiceImplmen implements ClienteService {
     @Autowired
     ClienteRepository clienteRepository;
+
+    @Autowired
+    ProductoService productoService; 
+
     public Cliente añadir(Cliente cliente) {
         clienteRepository.save(cliente);
         return cliente;
@@ -26,8 +31,9 @@ public class ClienteServiceImplmen implements ClienteService {
     }
 
     public void borrar(long id) {
-            clienteRepository.deleteById(id);
-        }
+        productoService.borrarPorCliente(id); 
+        clienteRepository.deleteById(id);
     }
+}
     
 

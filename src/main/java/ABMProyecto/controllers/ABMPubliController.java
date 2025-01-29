@@ -43,8 +43,8 @@ public class ABMPubliController {
         return "contacta";
     }
     
-    @GetMapping("/productos")
-    public String showproductos(Model model) {
-        return "productos";
-    }
+    // @GetMapping("/productos")
+    // public String showproductos(Model model) {
+    //     return "productos";
+    // }
 }
