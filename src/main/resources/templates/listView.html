@@ -44,7 +44,7 @@
             <button class="dropdown-item" type="submit">Cerrar sesión POST</button></form></li>
             </ul>
         </li>
-    <select id="select"  onChange="changeCategory();">
+    <!-- <select id="select"  onChange="changeCategory();">
         <option value="0">Todas</option>
         <option th:each="clien : ${listaClientes}"th:value="${clien.id}" th:text="${clien.nombre}"
           th:selected="${clien.id} == ${clienteSeleccionado.id} ? true : false">
@@ -61,8 +61,8 @@
         <option th:each="tipo : ${listaTipos}"th:value="${tipo.id}" th:text="${tipo.nombre}"
           th:selected="${tipo.id} == ${tipoSeleccionado.id} ? true : false">
         </option> 
-    </select>
-    <table border="1">
+    </select> -->
+    <table border="1" cellspacing="1">
         <thead>
             <tr>
                 <th>ID</th>

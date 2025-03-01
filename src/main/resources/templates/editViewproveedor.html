@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Editar proveedor</h1>
-    <form method="post" action="#" th:action="@{/nuevo/submit}" th:object="${Proveedorform}">
+    <form method="post" action="#" th:action="@{proveedor/editar/submit}" th:object="${Proveedorform}">
         <label>Id:<input type="text" id="id" th:field="*{id}" /></label><br />
         <label>Nombre: <input type="text" id="nombre" th:field="*{nombre}" /></label><br />
         <input type="submit" value="Enviar" />

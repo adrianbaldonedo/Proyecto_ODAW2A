@@ -83,7 +83,7 @@
             <ul>
                 <a href="/public/quienes-somos">somos</a><br>
                 <a href="/public/contacta">contacta</a><br>
-                <a href="/producto">producto</a><br>
+                <a href="/producto">ver Productos</a><br>
                 <a href="/cliente">ver Clientes</a><br>
                 <a href="/signin">login</a><br/>
                 <a href="/signout">desconectar</a><br/>
@@ -91,17 +91,18 @@
         </nav>
         </header>
     <!-- menú común para el público -->
-    <li class="nav-item"><a class="nav-link active" aria-current="page" th:href="@{public/home}">
-        Inicio</a></li>
+    <!-- <li class="nav-item"><a class="nav-link active" aria-current="page" th:href="@{public/home}">
+        Inicio</a></li> -->
         <!-- menú de gestión de usuarios (solo administradores) -->
         <li sec:authorize="hasRole('ADMIN')" class="nav-item">
         <a class="nav-link active" aria-current="page" th:href="@{/usuarios/}">Usuarios</a></li>
         <!-- menú: Registrarse (solo si no autenticado) -->
-        <li sec:authorize="!isAuthenticated()">
-        <a class="nav-item nav-link active" th:href="@{/registro/nuevo}">Registrarse</a></li>
+         
+        <!-- <li sec:authorize="!isAuthenticated()">
+        <a class="nav-item nav-link active" th:href="@{/registro/nuevo}">Registrarse</a></li> -->
         <!-- menú: Iniciar sesión (solo si no autenticado) -->
         <li sec:authorize="!isAuthenticated()">
-        <a class="nav-item nav-link active" th:href="@{/signin}">Iniciar sesión</a></li>
+        <!-- <a class="nav-item nav-link active" th:href="@{/signin}">Iniciar sesión</a></li> -->
         <li class="nav-item ms-md-auto dropdown " sec:authorize="isAuthenticated()">
             <a class="nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

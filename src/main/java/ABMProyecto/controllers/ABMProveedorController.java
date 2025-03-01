@@ -8,34 +8,35 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import ABMProyecto.domain.Proveedor;
-import ABMProyecto.services.ProveedorServiceImplMem ;
+import ABMProyecto.services.ProveedorService;
  @Controller
  @RequestMapping("/proveedor")
  public class ABMProveedorController {
     @Autowired
-     public ProveedorServiceImplMem  proveedorervice;
+     public ProveedorService  proveedorervice;
          @GetMapping({"/",""})
     public String getAll(@RequestParam(required=false) Integer op,Model model){
         model.addAttribute("listaProveedor",proveedorervice.obtenerTodos());
        if(op!=null){
         switch(op) {
-            case 1 ->model.addAttribute("msg","Cliente añadido correctamente");
-            case 2 ->model.addAttribute("msg","Cliente editado correctamente");
-            case 3 ->model.addAttribute("msg","Cliente borrado correctamente");
+            case 1 ->model.addAttribute("msg","Proveedor añadido correctamente");
+            case 2 ->model.addAttribute("msg","Proveedor editado correctamente");
+            case 3 ->model.addAttribute("msg","Proveedor borrado correctamente");
             }
        }
        return "listViewproveedor";
     }
-     public String getNew(Model model) {
+    @GetMapping("/nuevo")
+         public String getNew(Model model) {
          model.addAttribute("ProveedorForm", new Proveedor());
-         return "/newViewproveedor";
+         return "newViewproveedor";
      }
 
     @PostMapping("/nuevo/submit")
     public String getNewSubmit(Proveedor proveedor, Model model) {
         proveedorervice.añadir(proveedor);
         model.addAttribute("msg", "Proveedor añadido correctamente");
-        return "redirect:/newViewproveedor";
+        return "redirect:/proveedor";
     }
     @GetMapping("/editar/{id}")
     public String getEdit(@PathVariable Long id, Model model) {
@@ -47,7 +48,7 @@ import ABMProyecto.services.ProveedorServiceImplMem ;
     @PostMapping("/editar/submit")
     public String getEditSubmit(Proveedor proveedorFom, Model model) {
         proveedorervice.editar(proveedorFom);
-        return "redirect:/editViewproveedor";
+        return "redirect:/proveedor";
     }
     @GetMapping("/borrar/{id}")
     public String geDelete(@PathVariable Long id) {

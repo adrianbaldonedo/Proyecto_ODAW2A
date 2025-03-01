@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import ABMProyecto.domain.Tipo;
-import ABMProyecto.services.TipoServiceImplMem;
+import ABMProyecto.services.TipoService;
  @Controller
  @RequestMapping("/tipo")
  public class ABMTipoController {
     @Autowired
-     public TipoServiceImplMem tiposervice;
+     public TipoService tiposervice;
          @GetMapping({"/",""})
     public String getAll(@RequestParam(required=false) Integer op,Model model){
         model.addAttribute("listaTipo",tiposervice.obtenerTodos());
@@ -26,33 +26,34 @@ import ABMProyecto.services.TipoServiceImplMem;
        }
        return "listViewtipo";
     }
+    @GetMapping("/nuevo")
      public String getNew(Model model) {
          model.addAttribute("TipoForm", new Tipo());
-         return "/newViewTipo";
+         return "newViewtipo";
      }
 
     @PostMapping("/nuevo/submit")
     public String getNewSubmit(Tipo tipo, Model model) {
         tiposervice.añadir(tipo);
         model.addAttribute("msg", "Tipo añadido correctamente");
-        return "redirect:/newViewTipo";
+        return "redirect:/tipo";
     }
     @GetMapping("/editar/{id}")
     public String getEdit(@PathVariable Long id, Model model) {
         Tipo tipoForm;
         tipoForm=tiposervice.obtenerporId(id);
         model.addAttribute("TipoForm",tipoForm);
-        return "/editViewTipo";
+        return "/editViewtipo";
     }
     @PostMapping("/editar/submit")
     public String getEditSubmit(Tipo tipoFom, Model model) {
         tiposervice.editar(tipoFom);
-        return "redirect:/editViewcliente";
+        return "redirect:/tipo";
     }
     @GetMapping("/borrar/{id}")
     public String geDelete(@PathVariable Long id) {
         tiposervice.borrar(id);
-        return "redirect:/Tipo";
+        return "redirect:/tipo";
     }
 }
 

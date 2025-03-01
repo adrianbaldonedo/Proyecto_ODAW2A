@@ -6,7 +6,7 @@ public interface ProveedorService {
     List<Proveedor> obtenerTodos(); 
     Proveedor obtenerporId(long id); 
     Proveedor editar(Proveedor Proveedor);
-     void borrar(long id);
+    void borrar(long id);
     }
    
     

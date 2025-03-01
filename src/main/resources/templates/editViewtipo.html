@@ -3,11 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Editar tipo</title>
+    <style>
+        h1{color: orangered;}
+        label{color: blue ;
+        text-align: justify;
+        }
+        title{color: orangered;
+            text-align: justify;
+            font-style: arial;}
+    </style>
 </head>
 <body>
     <h1>Editar tipo</h1>
-    <form method="post" action="#" th:action="@{/nuevo/submit}" th:object="${Tipoform}">
+    <form method="post" action="#" th:action="@{tipo/editar/submit}" th:object="${TipoForm}">
         <label>Id:<input type="text" id="id" th:field="*{id}" /></label><br />
         <label>Nombre: <input type="text" id="nombre" th:field="*{nombre}" /></label><br />
         <input type="submit" value="Enviar" />

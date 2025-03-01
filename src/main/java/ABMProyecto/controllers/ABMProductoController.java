@@ -58,7 +58,7 @@ public class ABMProductoController {
     public String getNewSubmit(Producto producto, Model model) {
         productoService.añadir(producto);
         model.addAttribute("msg", "producto añadido correctamente");
-        return "redirect:/";
+        return "redirect:/producto";
     }
     @GetMapping("/editar/{id}")
     public String getEdit(@PathVariable Long id, Model model) {
@@ -71,12 +71,12 @@ public class ABMProductoController {
     @PostMapping("/editar/submit")
     public String getEditSubmit(Producto productoFom, Model model) {
         productoService.editar(productoFom);
-        return "redirect:/";
+        return "redirect:/producto";
     }
     @GetMapping("/borrar/{id}")
     public String geDelete(@PathVariable Long id) {
         productoService.borrar(id);
-        return "redirect:/newView";
+        return "redirect:/producto";
     }
 }
 

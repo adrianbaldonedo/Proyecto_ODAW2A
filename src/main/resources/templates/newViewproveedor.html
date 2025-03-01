@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Nuevo proveedor</title>
 </head>
 <body>
     <h1>Nuevo proveedor</h1>
-    <form method="post" action="#" th:action="@{producto/nuevo/submit}" th:object="${Proveedorform}">
+    <form method="post" action="#" th:action="@{proveedor/nuevo/submit}" th:object="${ProveedorForm}">
         <label>Id:<input type="text" id="id" th:field="*{id}" /></label><br />
-        <label>Nombre: <input type="text" id="nombre" th:field="*{nombre}" /></label><br />
+        <label>Nombre: <input type="text" id="nombre" th:field="*{nombre}" required /></label><br />
         <input type="submit" value="Enviar" />
     </form>
     <a th:href="@{/}">Inicio</a><br />
