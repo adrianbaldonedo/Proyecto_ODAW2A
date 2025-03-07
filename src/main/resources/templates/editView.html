@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar producto</title>
     <style>
+        body{background-color:lightblue}
         h1{color: orangered;}
-        label{color: blue ;
+        label{color: orangered ;
+              font-style: arial;
+              text-align: center;
         text-align: justify;
         }
         title{color: orangered;
@@ -20,7 +23,7 @@
         <label>Id:<input type="text" id="id" th:field="*{id}"readonly /></label><br />
         <label>Nombre: <input type="text" id="nombre" th:field="*{nombre}" /></label><br />
          <label>Precio:<input type="text"id="Precio"th:field=*{Precio}/></label><br/>
-        <input type="submit" value="Enviar" />
+        <input type="submit" value="Enviar" /><br>
     </form>
     <a th:href="@{/}">Inicio</a><br />
 </body>

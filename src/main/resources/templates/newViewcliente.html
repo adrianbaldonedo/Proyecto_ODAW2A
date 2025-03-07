@@ -7,7 +7,12 @@
     <script src="/webjars/bootstrap/js/bootstrap.bundle.min.js"></script>
     <title>Nuevo cliente</title>
     <style>
-        h1{color: orangered;}
+         body{
+            background-image:url(/cliente.jpg);
+            background-size:cover;}
+        h1{color: orangered;
+            font-style: arial;
+            text-align: center;}
         label{color: blue ;
         text-align: justify;
         }
@@ -17,11 +22,15 @@
     </style>
 </head>
 <body>
-    <h1>Nuevo cliente</h1>
-    <form method="post" action="#" th:action="@{/cliente/nuevo/submit}" th:object="${ClienteForm}">
-        <label>Nombre: <input type="text" id="nombre" th:field="*{nombre}" required /></label><br />
+    <div>
+        <h1>Nuevo cliente</h1>
+        </div>
+        <form method="post" action="#" th:action="@{/cliente/nuevo/submit}" th:object="${ClienteForm}"><br>
+        <label>Nombre: <input type="text" id="nombre" th:field="*{nombre}" required /></label><br /><br>
         <input type="submit" value="Enviar" />
-    </form>
+    </form><br>
+    
+    
     <a th:href="@{/}">Inicio</a><br />
 
 </body>

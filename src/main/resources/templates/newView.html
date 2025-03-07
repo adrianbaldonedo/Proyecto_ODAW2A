@@ -5,40 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nuevo producto</title>
     <style>
-        h1{color: orangered;}
-        label{color: blue ;
-        text-align: justify;
+        body{
+            background-image:url(/producto.jpg);
+            background-size:cover;}
+        h1{color: orangered;
+            font-style: arial;
+             text-align: center;}
+        label{color: orange ;
+            text-align: justify;
+            text-transform: arial;
+            font-size: medium;
         }
         title{color: orangered;
             text-align: justify;
             font-style: arial;}
     </style>
 </head>
-<body>
+<body img src="panaderia.jpg">
     <h1>Nuevo producto</h1>
     <form method="post" action="#" th:action="@{/producto/nuevo/submit}" th:object="${Productoform}">
-        <label>Nombre: <input type="text" id="nombre" th:field="*{nombre}" required /></label><br />
-        <label>Precio:<input type="text" id="Precio" th:field=*{precio}/></label><br/>
+        <label>Nombre: <input type="text" id="nombre" th:field="*{nombre}" required /></label><br/><br>
+        <label>Precio:<input type="text" id="Precio" th:field=*{precio}/></label><br/><br/>
         <label>
             Cliente:
             <select th:field="*{cliente}" id="Cliente">
                 <option th:each="cliente : ${listaClientes}" th:value="${cliente.id}" th:text="${cliente.nombre}"></option>
-            </select>
-        </label><br/>
+            </select><br/>
+        </label><br/><br>
         <label>
             Proveedor:
             <select th:field="*{proveedor}" id="Proveedor">
                 <option th:each="proveedor : ${listaProveedores}" th:value="${proveedor.id}" th:text="${proveedor.nombre}"></option>
             </select>
-        </label><br/>
+        </label><br/><br/>
         <label>
             Tipo:
             <select th:field="*{tipo}" id="Tipo">
                 <option th:each="tipo : ${listaTipo}" th:value="${tipo.id}" th:text="${tipo.nombre}"></option>
             </select>
-        </label><br/>
+        </label><br/><br>
         <input type="submit" value="Enviar" />
-    </form>
+    </form><br>
     <a th:href="@{/}">Inicio</a><br />
 </body>
 </html>
