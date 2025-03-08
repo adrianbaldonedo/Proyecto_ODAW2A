@@ -5,8 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacta</title>
     <style>
-        img{width:50px;
-            height:50px;}
+        body{
+            background-image:url(/panaderia.jpg);
+            background-size:cover;
+        }
+        img{
+            width:50px;
+            height:50px;
+        }
+        label{
+             color: cyan ;
+             text-align: justify;
+             font-size:large ;}    
+        input{font-size: large;}
     </style>
 </head>
 <body>
@@ -14,21 +25,20 @@
     th:object="${formInfo}">
     <label>Nombre:
         <input type="text" id="nombre" th:field="*{nombre}"/>
-    </label><br/>
+    </label><br/><br/>
     <label>Email:
         <input type="text" id="email" th:field=*{email}/>
-    </label><br/>
+    </label><br/><br>
     <select name="lista" size="3" th:field="*{valores}">
         <option value="queja">queja</option>
         <option value="consulta">consulta</option>
         <option value="ottros">otros</option> 
-    </select><br/>
+    </select><br/><br>
     <label>Acepto las condiciones
         <input type="checkbox" id="acepto" th:field="*{aceptaCondiciones}">
-    </label><br>
+    </label><br><br>
     <input type="submit" value="Enviar">
-</form>
-<!-- <a th:href="@{/}">Inicio</a><br/> -->
+</form><br>
 <a href="/"><img src="/index.png"></a><br>
 </body>
 </html>
